@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    padding: 1rem 2rem !important;
+}
+
+.navbar .nav-link {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.navbar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom: 3px solid white;
+}
+
+.card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}

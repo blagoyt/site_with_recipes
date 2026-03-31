@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Cooking Recipes Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+    <header class="bg-gradient text-white py-4" style="margin-bottom: 80px;">
+        <div class="container">
+            <h1 class="display-4 text-center mb-3">Our Recipes</h1>
+            <nav class="navbar navbar-expand navbar-dark justify-content-center fixed-top" style="background: linear-gradient(135deg, #ff6b35, #f7931e);">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="recipes.html">Recipes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="logoutLink">Logout</a></li>
+                </ul>
+                <span class="navbar-text text-white ms-3" id="userBadge">Guest</span>
+            </nav>
+        </div>
+    </header>
+    <main class="container my-5 pt-5">
+        <section>
+            <h2 class="text-center mb-4">Delicious Recipes</h2>
+            <div class="mb-4">
+                <input type="text" id="search" class="form-control" placeholder="Search recipes...">
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <article class="card h-100 shadow-sm recipe-card-clickable" data-bs-toggle="modal" data-bs-target="#recipeModal1" style="cursor: pointer;">
+                        <img src="images/simple_pasta.jpg" class="card-img-top" alt="Simple Pasta">
+                        <div class="card-body">
+                            <h3 class="card-title">Simple Pasta</h3>
+                            <p class="card-text">A quick and easy pasta dish perfect for busy weeknights.</p>
+                            <button class="btn btn-sm btn-primary">View Recipe</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <article class="card h-100 shadow-sm recipe-card-clickable" data-bs-toggle="modal" data-bs-target="#recipeModal2" style="cursor: pointer;">
+                        <img src="images/chicken_stir_fry.webp" class="card-img-top" alt="Chicken Stir Fry">
+                        <div class="card-body">
+                            <h3 class="card-title">Chicken Stir Fry</h3>
+                            <p class="card-text">Delicious and healthy stir fry with tender chicken and fresh vegetables.</p>
+                            <button class="btn btn-sm btn-primary">View Recipe</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <article class="card h-100 shadow-sm recipe-card-clickable" data-bs-toggle="modal" data-bs-target="#recipeModal3" style="cursor: pointer;">
+                        <img src="images/vegetable_salad.jpg" class="card-img-top" alt="Vegetable Salad">
+                        <div class="card-body">
+                            <h3 class="card-title">Vegetable Salad</h3>
+                            <p class="card-text">Fresh, crisp and nutritious salad perfect for lunch or dinner.</p>
+                            <button class="btn btn-sm btn-primary">View Recipe</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <article class="card h-100 shadow-sm recipe-card-clickable" data-bs-toggle="modal" data-bs-target="#recipeModal4" style="cursor: pointer;">
+                        <img src="images/chocolate_cake.webp" class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h3 class="card-title">Chocolate Cake</h3>
+                            <p class="card-text">Rich, moist, and decadent chocolate cake perfect for any occasion.</p>
+                            <button class="btn btn-sm btn-primary">View Recipe</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <article class="card h-100 shadow-sm recipe-card-clickable" data-bs-toggle="modal" data-bs-target="#recipeModal5" style="cursor: pointer;">
+                        <img src="images/fish_and_chips.webp" class="card-img-top" alt="Fish and Chips">
+                        <div class="card-body">
+                            <h3 class="card-title">Fish and Chips</h3>
+                            <p class="card-text">Classic crispy fish with golden fries, a timeless favorite.</p>
+                            <button class="btn btn-sm btn-primary">View Recipe</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <article class="card h-100 shadow-sm recipe-card-clickable" data-bs-toggle="modal" data-bs-target="#recipeModal6" style="cursor: pointer;">
+                        <img src="images/veggie_burger.jpg" class="card-img-top" alt="Veggie Burger">
+                        <div class="card-body">
+                            <h3 class="card-title">Veggie Burger</h3>
+                            <p class="card-text">Delicious plant-based burger that everyone will love.</p>
+                            <button class="btn btn-sm btn-primary">View Recipe</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <article class="card h-100 shadow-sm recipe-card-clickable" data-bs-toggle="modal" data-bs-target="#recipeModal7" style="cursor: pointer;">
+                        <img src="images/macaroni_and_cheese.jpg" class="card-img-top" alt="Macaroni and Cheese">
+                        <div class="card-body">
+                            <h3 class="card-title">Macaroni & Cheese</h3>
+                            <p class="card-text">Creamy comfort food at its finest.</p>
+                            <button class="btn btn-sm btn-primary">View Recipe</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <article class="card h-100 shadow-sm recipe-card-clickable" data-bs-toggle="modal" data-bs-target="#recipeModal8" style="cursor: pointer;">
+                        <img src="images/cherry_pie.jpg" class="card-img-top" alt="Cherry Pie">
+                        <div class="card-body">
+                            <h3 class="card-title">Cherry Pie</h3>
+                            <p class="card-text">Sweet and tart pie with a golden crust.</p>
+                            <button class="btn btn-sm btn-primary">View Recipe</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <article class="card h-100 shadow-sm recipe-card-clickable" data-bs-toggle="modal" data-bs-target="#recipeModal9" style="cursor: pointer;">
+                        <img src="images/chicken_nuggets.jpg" class="card-img-top" alt="Chicken Nuggets">
+                        <div class="card-body">
+                            <h3 class="card-title">Chicken Nuggets</h3>
+                            <p class="card-text">Crispy golden nuggets perfect as a snack or meal.</p>
+                            <button class="btn btn-sm btn-primary">View Recipe</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Recipe Modals -->
+    <div class="modal fade" id="recipeModal1" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Simple Pasta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>⏱️ Prep Time: 5 minutes | Cook Time: 15 minutes | 👥 Serves: 2</h6>
+                    <h5>📝 Ingredients:</h5>
+                    <ul>
+                        <li>200g pasta</li>
+                        <li>2 tbsp olive oil</li>
+                        <li>3 cloves garlic, minced</li>
+                        <li>Salt and pepper to taste</li>
+                        <li>Fresh parsley (optional)</li>
+                    </ul>
+                    <h5>👨‍🍳 Instructions:</h5>
+                    <ol>
+                        <li>Bring a large pot of salted water to a boil.</li>
+                        <li>Add pasta and cook according to package directions until al dente. Drain and set aside.</li>
+                        <li>In a large pan, heat olive oil over medium heat.</li>
+                        <li>Add minced garlic and sauté for 1-2 minutes until fragrant.</li>
+                        <li>Add the cooked pasta to the pan and toss to combine.</li>
+                        <li>Season with salt and pepper to taste.</li>
+                        <li>Serve hot, optionally topped with fresh parsley.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal2" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chicken Stir Fry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>⏱️ Prep Time: 15 minutes | Cook Time: 10 minutes | 👥 Serves: 4</h6>
+                    <h5>📝 Ingredients:</h5>
+                    <ul>
+                        <li>300g chicken breast, sliced thin</li>
+                        <li>2 cups mixed vegetables</li>
+                        <li>2 tbsp soy sauce</li>
+                        <li>1 tbsp sesame oil</li>
+                        <li>1 tsp ginger, minced</li>
+                        <li>2 cloves garlic, minced</li>
+                        <li>1 tbsp vegetable oil</li>
+                    </ul>
+                    <h5>👨‍🍳 Instructions:</h5>
+                    <ol>
+                        <li>Cut chicken into thin, bite-sized pieces.</li>
+                        <li>Chop vegetables into uniform sizes.</li>
+                        <li>Heat vegetable oil in a wok over high heat.</li>
+                        <li>Add chicken and cook until golden and cooked through.</li>
+                        <li>Add sesame oil, garlic and ginger, cooking for 30 seconds.</li>
+                        <li>Add vegetables and stir-fry for 3-4 minutes.</li>
+                        <li>Return chicken and add soy sauce.</li>
+                        <li>Toss everything and serve hot over rice.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal3" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Vegetable Salad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>⏱️ Prep Time: 10 minutes | No cooking | 👥 Serves: 4</h6>
+                    <h5>📝 Ingredients:</h5>
+                    <ul>
+                        <li>2 cups lettuce, chopped</li>
+                        <li>1 large tomato, diced</li>
+                        <li>1 cucumber, sliced</li>
+                        <li>1/2 red onion, thinly sliced</li>
+                        <li>2 tbsp olive oil</li>
+                        <li>1 tbsp balsamic vinegar</li>
+                        <li>Salt and pepper to taste</li>
+                    </ul>
+                    <h5>👨‍🍳 Instructions:</h5>
+                    <ol>
+                        <li>Wash and chop all vegetables into bite-sized pieces.</li>
+                        <li>Place lettuce in a large salad bowl.</li>
+                        <li>Layer tomatoes, cucumber, and onion on top.</li>
+                        <li>Whisk together olive oil and balsamic vinegar.</li>
+                        <li>Drizzle dressing over salad.</li>
+                        <li>Toss gently to coat evenly.</li>
+                        <li>Season and serve immediately.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal4" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chocolate Cake</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>⏱️ Prep Time: 15 minutes | Cook Time: 30 minutes | 👥 Serves: 8</h6>
+                    <h5>📝 Ingredients:</h5>
+                    <ul>
+                        <li>2 cups all-purpose flour</li>
+                        <li>1 cup sugar</li>
+                        <li>1/2 cup cocoa powder</li>
+                        <li>2 eggs</li>
+                        <li>1 cup milk</li>
+                        <li>1 tsp baking soda</li>
+                        <li>1/2 tsp salt</li>
+                        <li>1/3 cup vegetable oil</li>
+                        <li>1 tsp vanilla extract</li>
+                    </ul>
+                    <h5>👨‍🍳 Instructions:</h5>
+                    <ol>
+                        <li>Preheat oven to 175°C and grease a 9-inch cake pan.</li>
+                        <li>Mix flour, sugar, cocoa powder, baking soda, and salt.</li>
+                        <li>Add eggs, milk, oil, and vanilla extract.</li>
+                        <li>Beat on medium speed for 2 minutes until smooth.</li>
+                        <li>Pour batter into prepared pan.</li>
+                        <li>Bake for 30 minutes until a toothpick comes out clean.</li>
+                        <li>Cool and demolded onto a wire rack.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal5" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Fish and Chips</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>⏱️ Prep Time: 15 minutes | Cook Time: 20 minutes | 👥 Serves: 2</h6>
+                    <h5>📝 Ingredients:</h5>
+                    <ul>
+                        <li>400g white fish fillets</li>
+                        <li>4 large potatoes</li>
+                        <li>Oil for frying</li>
+                        <li>1 egg</li>
+                        <li>1/2 cup flour</li>
+                        <li>Salt and pepper</li>
+                        <li>Lemon wedges</li>
+                    </ul>
+                    <h5>👨‍🍳 Instructions:</h5>
+                    <ol>
+                        <li>Cut potatoes into thick chips and soak in cold water for 15 minutes.</li>
+                        <li>Heat oil in a deep fryer to 175°C.</li>
+                        <li>Drain potatoes and fry until golden. Remove and drain on paper towels.</li>
+                        <li>Pat fish dry and season with salt and pepper.</li>
+                        <li>Beat egg and dip fish, then coat with flour.</li>
+                        <li>Fry fish until golden brown and crispy.</li>
+                        <li>Serve with chips and lemon wedges.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal6" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Veggie Burger</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>⏱️ Prep Time: 20 minutes | Cook Time: 10 minutes | 👥 Serves: 4</h6>
+                    <h5>📝 Ingredients:</h5>
+                    <ul>
+                        <li>1 can black beans, drained</li>
+                        <li>1/2 cup oats</li>
+                        <li>1 onion, finely diced</li>
+                        <li>1/2 cup bell pepper, diced</li>
+                        <li>2 cloves garlic, minced</li>
+                        <li>1 egg</li>
+                        <li>1 tsp cumin</li>
+                        <li>Burger buns and toppings</li>
+                    </ul>
+                    <h5>👨‍🍳 Instructions:</h5>
+                    <ol>
+                        <li>Mash beans in a large bowl.</li>
+                        <li>Mix in oats, onion, pepper, garlic, egg, and cumin.</li>
+                        <li>Form mixture into patties.</li>
+                        <li>Heat oil in a skillet over medium-high heat.</li>
+                        <li>Grill or pan-fry patties 4-5 minutes per side until golden.</li>
+                        <li>Serve on buns with your favorite toppings.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal7" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Macaroni & Cheese</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>⏱️ Prep Time: 10 minutes | Cook Time: 20 minutes | 👥 Serves: 4</h6>
+                    <h5>📝 Ingredients:</h5>
+                    <ul>
+                        <li>200g macaroni pasta</li>
+                        <li>2 cups sharp cheddar cheese, shredded</li>
+                        <li>2 cups whole milk</li>
+                        <li>2 tbsp butter</li>
+                        <li>2 tbsp flour</li>
+                        <li>Salt and pepper to taste</li>
+                        <li>1/2 tsp mustard powder</li>
+                    </ul>
+                    <h5>👨‍🍳 Instructions:</h5>
+                    <ol>
+                        <li>Cook pasta according to package directions. Drain and set aside.</li>
+                        <li>Melt butter in a saucepan over medium heat.</li>
+                        <li>Whisk in flour to create a roux and cook for 1 minute.</li>
+                        <li>Gradually add milk, whisking constantly until smooth.</li>
+                        <li>Heat until sauce thickens, about 5 minutes.</li>
+                        <li>Stir in cheese and mustard powder until melted.</li>
+                        <li>Combine pasta with cheese sauce and season.</li>
+                        <li>Serve immediately while hot.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal8" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cherry Pie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>⏱️ Prep Time: 20 minutes | Cook Time: 45 minutes | 👥 Serves: 8</h6>
+                    <h5>📝 Ingredients:</h5>
+                    <ul>
+                        <li>2 cups fresh cherries, pitted</li>
+                        <li>1 cup sugar</li>
+                        <li>2 tbsp cornstarch</li>
+                        <li>1/4 tsp almond extract</li>
+                        <li>Pre-made pie crust</li>
+                        <li>1 egg (for egg wash)</li>
+                        <li>1 tbsp water</li>
+                    </ul>
+                    <h5>👨‍🍳 Instructions:</h5>
+                    <ol>
+                        <li>Preheat oven to 190°C.</li>
+                        <li>Mix cherries, sugar, cornstarch, and almond extract.</li>
+                        <li>Line a pie dish with one crust and add filling.</li>
+                        <li>Top with second crust and seal edges with a fork.</li>
+                        <li>Cut small vents in top crust for steam escape.</li>
+                        <li>Mix egg with water and brush over crust.</li>
+                        <li>Bake for 45 minutes until crust is golden.</li>
+                        <li>Cool for 15 minutes before serving.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal9" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chicken Nuggets</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>⏱️ Prep Time: 15 minutes | Cook Time: 12 minutes | 👥 Serves: 4</h6>
+                    <h5>📝 Ingredients:</h5>
+                    <ul>
+                        <li>500g chicken breast</li>
+                        <li>1 cup breadcrumbs</li>
+                        <li>2 eggs</li>
+                        <li>1/2 cup flour</li>
+                        <li>Salt and pepper</li>
+                        <li>Oil for frying</li>
+                        <li>Dipping sauce of choice</li>
+                    </ul>
+                    <h5>👨‍🍳 Instructions:</h5>
+                    <ol>
+                        <li>Cut chicken breasts into nugget-sized pieces.</li>
+                        <li>Set up three bowls: flour, beaten eggs, breadcrumbs.</li>
+                        <li>Coat each nugget in flour, then egg, then breadcrumbs.</li>
+                        <li>Heat oil in a skillet over medium-high heat.</li>
+                        <li>Fry nuggets 3-4 minutes per side until golden.</li>
+                        <li>Drain on paper towels.</li>
+                        <li>Serve hot with your favorite dipping sauce.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="backToTop" class="btn btn-primary" style="position: fixed; bottom: 20px; right: 20px; display: none;">↑ Top</button>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2026 Cooking Recipes Site</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            requireAuth();
+
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        document.getElementById('search').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const cards = document.querySelectorAll('.recipe-card-clickable');
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    card.parentElement.style.display = 'block';
+                } else {
+                    card.parentElement.style.display = 'none';
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 100) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
