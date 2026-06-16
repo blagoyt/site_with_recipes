@@ -32,12 +32,10 @@
 
     <script src="auth.js"></script>
     <script>
-        // Пренасочване към началната страница, ако потребителят вече е вписан
         if (isAuthenticated()) {
             window.location.href = 'index.html';
         }
 
-        // Изпращане на данните към PHP контейнера (порт 8000)
         document.getElementById('loginForm').addEventListener('submit', async (event) => {
             event.preventDefault();
             const username = document.getElementById('username').value.trim();
@@ -57,14 +55,13 @@
                     setUser(data.username);
                     window.location.href = 'index.html';
                 } else {
-                    alert(data.message); // Извежда съобщение от базата данни за грешна парола/потребител
+                    alert(data.message); 
                 }
             } catch (err) {
                 alert('Грешка при връзка с бекенд контейнера.');
             }
         });
 
-        // Вход като гост
         document.getElementById('guestBtn').addEventListener('click', () => {
             setUser('Guest');
             window.location.href = 'index.html';
